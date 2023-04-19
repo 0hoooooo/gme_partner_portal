@@ -1,14 +1,14 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import Loading from "../component/Loading";
-import Token from "../pages/auth/token";
+import Valid from "../pages/auth/Valid";
+import Header from "../component/Header";
 
 const MainLayout = () => {
-  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [isLogin, setIsLogin] = useState(false);
-
+  const user = localStorage.getItem("username");
+  const navigate = useNavigate();
   const api = async () => {
     try {
       setLoading(true);
@@ -16,6 +16,7 @@ const MainLayout = () => {
       setLoading(false);
     }
   };
+
   useEffect(() => {
     setTimeout(() => {
       api();
@@ -23,24 +24,25 @@ const MainLayout = () => {
   }, [loading]);
 
   useEffect(() => {
-    if (localStorage.getItem("username")) {
+    console.log(localStorage.getItem("username"));
+    if (user) {
       setIsLogin(true);
+    } else {
+      setIsLogin(false);
     }
   }, []);
 
-  useEffect(() => {
-    isLogin === false ? (
-      navigate("/auth/login")
-    ) : (
-      <MainWrapper>
-        <MainBody>
-          <Outlet />
-        </MainBody>
-        <MainFooter />
-      </MainWrapper>
-    );
-  });
-  return <Loading />;
+  return !user ? (
+    navigate("/auth/login")
+  ) : (
+    <MainWrapper>
+      <Header />
+      <MainBody>
+        <Outlet />
+      </MainBody>
+      <MainFooter />
+    </MainWrapper>
+  );
 };
 
 export default MainLayout;

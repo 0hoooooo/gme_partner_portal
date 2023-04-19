@@ -40,6 +40,13 @@ const GlobalStyles = createGlobalStyle`
         background: transparent;
         cursor: pointer;
     }
+    img{
+        margin: 0px;
+        padding: 0px;
+        border: 0px;
+        font: inherit;
+        vertical-align: baseline;
+    }
 `;
 
 export default GlobalStyles;
