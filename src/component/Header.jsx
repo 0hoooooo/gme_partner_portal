@@ -8,126 +8,134 @@ const Header = () => {
     localStorage.removeItem("username");
     navigate("/auth/login");
   };
+  const Profile = () => {
+    navigate("/mypage/profile");
+  };
   return (
     <HeaderWrapper>
       <HeaderContainer>
-        <NavbarHeader>
-          <a
-            className="navbar_brand"
-            href="#"
-            onClick={(e) => e.preventDefault}
-          >
-            <img src={Image} className="brand_logo" alt="logo" />
-          </a>
-        </NavbarHeader>
-        <MenuUl>
-          <MenuNavUl>
-            <li className="dropDown">
-              <a className="dropDownToggle" onClick={(e) => e.preventDefault}>
-                Fund<span className="caret"></span>
-              </a>
-              <ul className="dropDownMenu">
-                <li>
-                  <a
-                    className="gme_anchor"
-                    href="/Pages/BalanceManagement/List.aspx"
-                  >
-                    Balance History
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="gme_anchor"
-                    href="/Pages/DepositHistory/List.aspx"
-                  >
-                    Deposit History
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="gme_anchor"
-                    href="/Pages/ExchangeFund/GridList.aspx"
-                  >
-                    Exchange Fund History
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="gme_anchor"
-                    href="/Pages/ExchangeFund/List.aspx"
-                  >
-                    Exchange Fund
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="gme_anchor"
-                    href="/Pages/VASettlement/Report.aspx"
-                  >
-                    Statement
-                  </a>
-                </li>
-              </ul>
-            </li>
-          </MenuNavUl>
+        <MenuUlLeft>
+          <NavbarHeader>
+            <a
+              className="navbar_brand"
+              onClick={() => window.location.reload()}
+            >
+              <img src={Image} className="brand_logo" alt="logo" />
+            </a>
+          </NavbarHeader>
+          <MenuUl>
+            <MenuNavUl>
+              <li className="dropDown">
+                <a className="dropDownToggle" onClick={(e) => e.preventDefault}>
+                  Fund
+                  <span className="caret"></span>
+                </a>
+                <ul className="dropDownMenu">
+                  <li>
+                    <a
+                      className="gme_anchor"
+                      href="/Pages/BalanceManagement/List.aspx"
+                    >
+                      Balance History
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className="gme_anchor"
+                      href="/Pages/DepositHistory/List.aspx"
+                    >
+                      Deposit History
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className="gme_anchor"
+                      href="/Pages/ExchangeFund/GridList.aspx"
+                    >
+                      Exchange Fund History
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className="gme_anchor"
+                      href="/Pages/ExchangeFund/List.aspx"
+                    >
+                      Exchange Fund
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className="gme_anchor"
+                      href="/Pages/VASettlement/Report.aspx"
+                    >
+                      Statement
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </MenuNavUl>
 
-          <MenuNavUl>
-            <li className="dropDown">
-              <a className="dropDownToggle" onClick={(e) => e.preventDefault}>
-                Transaction<span className="caret"></span>
-              </a>
-              <ul className="dropDownMenu">
-                <li>
-                  <a className="gme_anchor" href="/Pages/CSVFileB2B/List.aspx">
-                    Batch Upload
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="gme_anchor"
-                    href="/Pages/TransactionDetail/List.aspx"
-                  >
-                    Transaction Detail
-                  </a>
-                </li>
-              </ul>
-            </li>
-          </MenuNavUl>
+            <MenuNavUl>
+              <li className="dropDown">
+                <a className="dropDownToggle" onClick={(e) => e.preventDefault}>
+                  Transaction<span className="caret"></span>
+                </a>
+                <ul className="dropDownMenu">
+                  <li>
+                    <a
+                      className="gme_anchor"
+                      href="/Pages/CSVFileB2B/List.aspx"
+                    >
+                      Batch Upload
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className="gme_anchor"
+                      href="/Pages/TransactionDetail/List.aspx"
+                    >
+                      Transaction Detail
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </MenuNavUl>
 
-          <MenuNavUl>
-            <li className="dropDown">
-              <a className="dropDownToggle" onClick={(e) => e.preventDefault}>
-                Virtual Account<span className="caret"></span>
-              </a>
-              <ul className="dropDownMenu">
-                <li>
-                  <a
-                    className="gme_anchor"
-                    href="/Pages/CustomerVirtualAccount/List.aspx"
-                  >
-                    Management
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="gme_anchor"
-                    href="/Pages/VACollectionDetail/List.aspx"
-                  >
-                    Collection
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="gme_anchor"
-                    href="/Pages/VASettlement/List.aspx"
-                  >
-                    Settlement
-                  </a>
-                </li>
-              </ul>
-            </li>
-          </MenuNavUl>
-        </MenuUl>
+            <MenuNavUl>
+              <li className="dropDown">
+                <a className="dropDownToggle" onClick={(e) => e.preventDefault}>
+                  Virtual Account<span className="caret"></span>
+                </a>
+                <ul className="dropDownMenu">
+                  <li>
+                    <a
+                      className="gme_anchor"
+                      href="/Pages/CustomerVirtualAccount/List.aspx"
+                    >
+                      Management
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className="gme_anchor"
+                      href="/Pages/VACollectionDetail/List.aspx"
+                    >
+                      Collection
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className="gme_anchor"
+                      href="/Pages/VASettlement/List.aspx"
+                    >
+                      Settlement
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </MenuNavUl>
+          </MenuUl>
+        </MenuUlLeft>
 
         <MenuUlRight>
           <li className="dropDown">
@@ -137,7 +145,7 @@ const Header = () => {
             </a>
             <ul className="dropDownMenu">
               <li>
-                <a className="gme_anchor" href="PartnerDetail/List.aspx">
+                <a className="gme_anchor" onClick={Profile}>
                   Profile
                 </a>
               </li>
@@ -192,11 +200,9 @@ const NavbarHeader = styled.div`
     margin-left: 0;
   }
   .navbar_brand {
-    float: left;
-    height: auto;
-    padding: 10px 50px;
+    cursor: pointer;
+    padding: 10px 10px;
     font-size: 20px;
-    width: 10px;
     line-height: 10px;
     background-color: transparent;
     @media screen and (min-width: 768px) {
@@ -208,18 +214,22 @@ const NavbarHeader = styled.div`
     object-fit: cover;
     width: 150px;
     height: 50px;
+    cursor: pointer;
   }
 `;
 
 const MenuUl = styled.ul`
-  padding-left: 0;
+  display: flex;
+  padding-left: 100px;
   list-style: none;
   @media screen and (min-width: 768px) {
     float: left;
     margin: 0;
   }
 `;
-
+const MenuUlLeft = styled.div`
+  display: flex;
+`;
 const MenuNavUl = styled.ul`
   @media screen and (min-width: 768px) {
     float: left;
@@ -276,6 +286,7 @@ const MenuNavUl = styled.ul`
       padding: 10px 20px;
       clear: both;
       font-weight: 400;
+      font-size: 16px;
       line-height: 1.42857143;
       white-space: nowrap;
       color: #ffffff !important;

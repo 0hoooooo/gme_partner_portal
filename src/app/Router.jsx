@@ -1,8 +1,10 @@
 import { BrowserRouter, Navigate, useRoutes } from "react-router-dom";
 import AuthLayout from "../layout/AuthLayout";
-import Login from "../pages/login/Login";
+import Login from "../pages/auth/Login";
 import MainLayout from "../layout/MainLayout";
 import Home from "../pages/Home";
+import Profile from "../pages/auth/Profile";
+
 const Routes = () => {
   const rootRoutes = {
     path: "/",
@@ -22,6 +24,16 @@ const Routes = () => {
       },
     ],
   };
+  const profileRoutes = {
+    path: "/mypage",
+    elment: <MainLayout />,
+    children: [
+      {
+        path: "profile",
+        element: <Profile />,
+      },
+    ],
+  };
   const authRoutes = {
     path: "/auth",
     element: <AuthLayout />,
@@ -32,7 +44,13 @@ const Routes = () => {
       },
     ],
   };
-  const routes = [rootRoutes, noMatchRoutes, mainRoutes, authRoutes];
+  const routes = [
+    rootRoutes,
+    noMatchRoutes,
+    mainRoutes,
+    profileRoutes,
+    authRoutes,
+  ];
 
   return useRoutes(routes);
 };

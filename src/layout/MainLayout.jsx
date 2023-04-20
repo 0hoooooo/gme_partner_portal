@@ -30,7 +30,7 @@ const MainLayout = () => {
     } else {
       setIsLogin(false);
     }
-  }, []);
+  }, [user]);
 
   return !user ? (
     navigate("/auth/login")
